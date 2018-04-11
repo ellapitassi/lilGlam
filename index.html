@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src='/vendor/angular/angular.js'></script>
+    <link rel='stylesheet' type='text/css' href='/vendor/bootstrap/dist/css/bootstrap.css'></link>
+    <script src='/client/app.js'></script>
+    <!-- controllers -->
+    <script src='/client/controllers.js'></script>
+    <!-- directives -->
+    <script src='/client/directives.js'></script>
+    <!-- services -->
+    <script src='/client/service.js'></script>
+
+    <body ng-app='glamsquad'>
+        <div class='container'>
+            <h1>Welcome to Little Glam!</h1>
+            <div ng-controller='ProductForm'>
+                <form name='productForm'>
+                    <input ng-model='name' 
+                    required placeholder='Product Name' 
+                    name='name'>
+                    <div ng-if='productForm.name.$invalid && productForm.name.$dirty'>*</div>
+                    <button class='btn btn-primary' 
+                    ng-disabled='productForm.$invalid'
+                    ng-click='submit(name)'>Save</button>
+                </form>
+            </div>
+            <product-summary></product-summary>
+            <product-list></product-list>
+        </div>
+    </body>
+</head>
+
+</html>
