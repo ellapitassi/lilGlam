@@ -1,21 +1,24 @@
 //to reuse
-app.directive('productSummary', function(){
+app.directive('addProduct', function(){
     return {
-        templateUrl: '/client/templates/productSummary.html',
+        templateUrl: '/client/templates/addProduct.html',
         controller: 'ProductSummary'
     }
 })
 
 app.directive('productList', function(){
     return {
-        templateUrl: '/client/templates/productList.html',
-        controller: 'ProductList'
+        templateUrl: '/client/templates/productlist.html',
+        controller: 'ProductForm'
     }
 })
 
-// app.directive('productDetails', function(){
-//     return {
-//         templateUrl: '/client/templates/productDetails.html',
-//         controller: 'ProductDetails'
-//     }
-// })
+// angular.module('glamsquad')
+//     .directive('gsNav', function(){
+
+app.directive('gsNav', function(){
+    return {
+        templateUrl: '/client/templates/gsNav.html'//,
+        // controller: 'ProductForm'
+    }
+})

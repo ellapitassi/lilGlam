@@ -1,0 +1,10 @@
+<div>
+        <div ng-controller='ProductForm'>
+            <form name='productForm'>
+                <input ng-model='name' required placeholder='Product Name' name='name'>
+                <div ng-if='productForm.name.$invalid && productForm.name.$dirty'>*</div>
+                <button class='btn btn-primary' ng-disabled='productForm.$invalid' ng-click='submit(name)'>Save</button>
+            </form>
+        </div>
+    </div>
+    <a ui-sref='products'>Cancel</a>

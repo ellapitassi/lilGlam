@@ -12,7 +12,6 @@ app.service('ProductService', function($http){
         return $http.get('/api/products')
         .then(res => {
             angular.copy(res.data, products)
-            console.log(products)
             return res.data;
         })
    }

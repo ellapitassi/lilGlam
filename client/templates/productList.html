@@ -1,11 +1,19 @@
 <div>
+    <h6>Product count:</h6>
+    <span ng-class='{"badge badge-success": count()>0, "badge badge-danger": count() < 1}'>{{ count() }}</span>
+    <hr>
+</div>
+<div>
     <ul ng-repeat='product in products'>
         <li>{{ product.name }}
             <button name='edit-button' class='btn btn-primary btn-sm' ng-click=clickedEdit(product.id)>Edit</button>
-            <input ng-if='edit[product.id]' ng-model='product.name'/>
-        <button class='btn btn-danger btn-sm' ng-click='destroyProduct(product.id)'>x</button></li>
+            <input ng-if='edit === product.id' ng-model='product.name' />
+            <button class='btn btn-danger btn-sm' ng-click='destroyProduct(product.id)'>x</button>
+        </li>
     </ul>
 </div>
-{{
-    edit
-}}
+<div>
+    <a ui-sref='products.add-product' ng-if='showAddProducts()'>Add Product</a>
+    {{ foo() }}
+    <ui-view></ui-view>
+</div>

@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Product, User } = require('../../db/models')
+// const { Product, User } = require('../../db/models')
+const model = require('../../db/models')
+const Product = model.Product
 
 module.exports = router;
 
@@ -9,3 +11,9 @@ router.get('/', function (req, res, next) {
       .then(products => res.json(products))
       .catch(next);
 });
+
+router.post('/add-product', function (req, res, next) {
+    console.log("req.body", req.body)
+    res.send(req.body)
+});
+
